@@ -1,77 +1,112 @@
-# Stoicism-Related-Tweets-Key-Findings-and-Insights
+# 🧠 Stoicism on Twitter — A Geospatial & Sentiment Analysis (2010–2023)
 
-## Overview
+Welcome to the official repository of our large-scale analysis of Stoicism-related discourse on Twitter 🌍. This project explores **how, where, and with what sentiment** Stoic ideas were shared over more than a decade — using advanced geospatial tools, sentiment modeling, and interactive maps. 
 
-This repository contains the analysis of geotagged tweets related to Stoicism from 2010 to July 2023, sourced from the **Geotweet Archive v2.0** (Harvard CGA). The project aims to investigate the public discourse surrounding Stoicism on Twitter, focusing on sentiment distribution, geographical distribution, temporal trends, and the resolution of previously categorized "Unknown" tweets. The analysis also explores correlations between tweet volume and sentiment and maps the geographical distribution of Stoicism-related tweets across the globe.
+Built during a research residency at **Harvard CGA** by  
+**Rafael Albuquerque** & **Devika Kakkar**.
 
-## Key Findings
+---
 
-- **Sentiment Distribution:** 49% of the tweets express positive sentiment, 35% neutral, and 16% negative.
-- **Geographical Distribution:** High tweet volumes are observed in English-speaking countries such as the United States, United Kingdom, and South Africa. Bermuda and the Bahamas showed notable engagement in Stoic discussions.
-- **Temporal Trends:** A peak in positive sentiment occurred in 2014, with a gradual decline in positivity over time.
-- **Correlation between Tweet Volume and Sentiment:** A weak negative correlation of -0.18 was found, indicating that sentiment is not strongly influenced by tweet volume.
-- **Unknown Tweets Resolution:** "Unknown" tweets were mapped to specific countries using geographical coordinates, resolving their locations to countries like the United States, Bermuda, and the United Kingdom.
+## 📦 Project Overview
 
-## Data
+- **🗓️ Timeframe:** Jan 2010 to July 2023  
+- **🧵 Dataset:** [Geotweet Archive v2.0](https://doi.org/10.7910/DVN/3NCMB6) — 10B+ tweets  
+- **🧭 Focus:** Sentiment polarity, geolocation, temporal shifts  
+- **🧮 Total Tweets Analyzed:** `678,498`  
+- **📍 Geolocated:** Yes — tweets contain latitude & longitude  
+- **🧪 Method:** NLP + Geospatial + Exploratory Visualization  
+- **🌐 Notebook-Friendly:** All code written for Jupyter notebooks with full outputs  
 
-- **Source:** Geotweet Archive v2.0 (Harvard CGA)
-- **Period:** 2010–July 2023
-- **Metrics Analyzed:**
-  - Tweet Volume
-  - Sentiment Polarity (Positive, Neutral, Negative)
-  - Geographical Distribution (Latitude, Longitude)
+---
 
-### Data Access
+## 🔍 Key Findings
 
-The data used for this analysis can be accessed through the [Geotweet Archive v2.0](https://doi.org/doi:10.7910/DVN/3NCMB6) or by accessing the raw tweet data files provided in the repository.
+| Metric | Value |
+|--------|-------|
+| 😊 Positive Sentiment | **49%** |
+| 😐 Neutral Sentiment | **35%** |
+| 😠 Negative Sentiment | **16%** |
+| 🌎 Top Country | **United States** (235K+ tweets) |
+| 📉 Correlation Volume x Sentiment | `r = -0.18` (p = 0.07128) |
+| 🧭 "Unknown" Tweets Resolved | Mapped to **233 countries** using coordinates |
 
-### Geospatial Coordinates Data
+> 🔁 See `/figures/` for all outputs including maps and charts.
 
-The country coordinates used to map the "Unknown" tweets can be accessed via this [GitHub raw file](https://gist.githubusercontent.com/metal3d/5b925077e66194551df949de64e910f6/raw/c5f20a037409d96958553e2eb6b8251265c6fd63/country-coord.csv).
+---
 
-## Methodology
+## 📊 Visualizations
 
-The methodology follows these key steps:
+| 🔢 Figure | 📍 Location | 🖼️ Description |
+|----------|-------------|----------------|
+| **Figure 1** | Block 2B | Sentiment Pie Chart |
+| **Figure 2** | Block 2F | Interactive Heatmap of Stoic Tweets |
+| **Figure 3** | Block 2G | Temporal Line Chart of Sentiment Over Time |
+| **Figure 4** | Block 2H | Scatter Plot: Tweet Volume × Sentiment |
+| **Figure 5** | Block 2I | Resolution of Unknown Tweets by Coordinates |
+| **Figure 6** | Block 2J | Country-Level Sentiment Table |
 
-1. **Data Preprocessing:** Tweets were filtered to include only those containing Stoicism-related keywords. The dataset was cleaned, and sentiment analysis was applied to classify tweets as positive, neutral, or negative.
-2. **Geospatial Mapping:** Geospatial coordinates (latitude and longitude) were used to map tweets' geographical origins. "Unknown" tweets, previously unclassified, were resolved using the country coordinates data from the GitHub raw file.
-3. **Sentiment Analysis:** Tweets were classified based on sentiment polarity, and the sentiment distribution was analyzed over time.
-4. **Geographical and Temporal Trends:** Heatmaps and graphs were generated to visualize the geographical distribution and sentiment trends over time.
+> 📌 **Tip**: You can open `Figure 2` in any browser and zoom into Cambridge, MA or your region of interest.
 
-## Visualizations
+---
 
-The following visualizations were generated as part of the analysis:
+## ⚙️ How to Run
 
-- **Figure 1:** Sentiment Distribution of Stoicism-Related Tweets (Pie chart showing positive, neutral, and negative sentiment)
-- **Figure 2:** Heatmap of Stoicism-Related Tweets by Region (Interactive heatmap of tweet volume across the world, zoomed into Cambridge/Boston area for local engagement)
-- **Figure 3:** Temporal Trends in Sentiment of Stoicism-Related Tweets (Line chart showing sentiment shifts over time)
-- **Figure 4:** Mapping of 'Unknown' Tweets to Country Locations (Geospatial map showing how 'Unknown' tweets were mapped to countries)
+bash
+# 1. Clone the repo
+git clone https://github.com/youruser/stoicism-twitter-analysis.git
 
-The interactive heatmap and other charts are saved as `.html` files and `.png` images in the repository for reference.
+# 2. Create a virtual environment and install dependencies
+pip install -r requirements.txt
 
-## Installation
-
-To run this analysis on your own machine, follow these steps:
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/yourusername/stoicism-tweet-analysis.git
-2. Install required dependencies: Ensure you have Python 3.8 or higher installed and set up a virtual environment. Then, install the necessary libraries:
-  !pip install -r requirements.txt
-   
-3. Run the notebook: Start Jupyter Notebook and open the analysis file:
-jupyter notebook Stoicism_Tweet_Analysis.ipynb
+# 3. Run the Jupyter notebook
+jupyter notebook Stoicism_Tweet_Analysis.ipynb```
 
 
-Future Work
-Negative Sentiment Analysis: Further investigation into the specific triggers or controversies influencing negative discussions of Stoicism.
 
-Sentiment Shifts with Events: Cross-referencing sentiment trends with external events, such as public figures' endorsements or specific movements, could provide a more nuanced understanding of shifts in Stoic discourse.
+💡 Use Python 3.8+. Compatible with HPC environments and supports multiprocessing (64 cores, 990GB RAM, 4 GPUs setup tested).
 
-Authors
-Rafael Albuquerque (Visiting Scholar, Harvard CGA)
-Devika Kakkar (Harvard CGA)
 
-License
-This project is licensed under the Harvard CGA terms, and the content derived from the Geotweet Archive is subject to its respective terms of use.
+🧠 Methodology
+Keyword Filtering:
+Tweets were filtered using a curated list of Stoic roots and terms like stoic*, seneca, amorfati, mementomori, etc. Regex logic handled partial matches.
 
+Sentiment Analysis:
+We used pre-trained transformer-based models to label sentiment per tweet (positive, neutral, negative).
+
+Geolocation:
+
+Tweets with coordinates were directly mapped
+
+"Unknown" locations were resolved using country centroid distances
+
+Temporal Analysis:
+Sentiment was tracked by year and visualized in time series plots.
+
+Volume–Sentiment Correlation:
+Pearson correlation tested between tweet volume and average sentiment per month.
+
+📚 Citations
+Lewis, Benjamin, and Devika Kakkar. 2016. “Harvard CGA Geotweet Archive v2.0.” Harvard Dataverse. https://doi.org/10.7910/DVN/3NCMB6
+
+👥 Authors
+Rafael Albuquerque
+Visiting Scholar – Harvard CGA
+PhD Candidate in Marketing @ UFRGS
+
+Devika Kakkar
+Senior Researcher – Harvard CGA
+Creator of Geotweet Archive
+
+
+
+
+🌟 Acknowledgments
+This research was made possible thanks to:
+Harvard CGA computing infrastructure
+The open-source Python NLP and geospatial community
+
+
+
+
+🚀 Ready to Explore?
+Check the notebook Stoicism_Tweet_Analysis.ipynb and dive into the philosophy-powered Twitterverse 🌌
